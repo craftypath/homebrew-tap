@@ -1,2 +1,2 @@
-# homebrew-tap-gotf
-Homebrew Formula for gotf
+# Homebrew Formulas for craftypath Tools
+
