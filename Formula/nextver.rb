@@ -2,16 +2,16 @@
 class Nextver < Formula
   desc "Automatic semver versioning"
   homepage "https://github.com/craftypath/nextver/"
-  version "0.2.0"
+  version "0.3.0"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/craftypath/nextver/releases/download/v0.2.0/nextver_0.2.0_darwin_amd64.tar.gz"
-    sha256 "09a93f1fe280c263adbfcaee71f66c9d33b05230bc6415b9d0f376107a0b91b4"
+    url "https://github.com/craftypath/nextver/releases/download/v0.3.0/nextver_0.3.0_darwin_amd64.tar.gz"
+    sha256 "f70e1b8dc218654cf9d7cee4e2be7c82e8499847cdd464f2c1f915b6f18eec36"
   elsif OS.linux?
     if Hardware::CPU.intel?
-      url "https://github.com/craftypath/nextver/releases/download/v0.2.0/nextver_0.2.0_linux_amd64.tar.gz"
-      sha256 "289f0b7471af3d722e50f4bf2c081af746d5cf2c20bd3b8cf9cb61aa6e981e26"
+      url "https://github.com/craftypath/nextver/releases/download/v0.3.0/nextver_0.3.0_linux_amd64.tar.gz"
+      sha256 "e6c33109b98f9f02939ccf42f87226a95829ff117bc3b69df1e1e65afd3aaa2e"
     end
   end
 
