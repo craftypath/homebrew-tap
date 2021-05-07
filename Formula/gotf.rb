@@ -5,16 +5,16 @@
 class Gotf < Formula
   desc "Handling multiple environments with Terraform made easy"
   homepage "https://github.com/craftypath/gotf/"
-  version "0.12.0"
+  version "0.13.0"
   bottle :unneeded
 
   if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/craftypath/gotf/releases/download/v0.12.0/gotf_0.12.0_darwin_amd64.tar.gz"
-    sha256 "b1a27db19b6869fa70bebe88007c55077ca47c545f4ab00291a749b67faf48f4"
+    url "https://github.com/craftypath/gotf/releases/download/v0.13.0/gotf_0.13.0_darwin_amd64.tar.gz"
+    sha256 "85be485fff4a63e5a8fecb1386ca7f8b984dd0b6610dc70956e0696b7997cc53"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/craftypath/gotf/releases/download/v0.12.0/gotf_0.12.0_linux_amd64.tar.gz"
-    sha256 "896c9d98bc1bb6d37c0d354d3265dff7cd8e1a08b52a1f7b036f753456a3f169"
+    url "https://github.com/craftypath/gotf/releases/download/v0.13.0/gotf_0.13.0_linux_amd64.tar.gz"
+    sha256 "432ce560f5a59d8515dfa9a4e0f74ae02682ca6f439637333f246576f2d4fe1b"
   end
 
   def install
