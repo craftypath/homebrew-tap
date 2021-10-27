@@ -5,20 +5,28 @@
 class Gotf < Formula
   desc "Handling multiple environments with Terraform made easy"
   homepage "https://github.com/craftypath/gotf/"
-  version "0.13.0"
-  bottle :unneeded
+  version "0.14.0"
 
-  if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/craftypath/gotf/releases/download/v0.13.0/gotf_0.13.0_darwin_amd64.tar.gz"
-    sha256 "85be485fff4a63e5a8fecb1386ca7f8b984dd0b6610dc70956e0696b7997cc53"
-  end
-  if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/craftypath/gotf/releases/download/v0.13.0/gotf_0.13.0_linux_amd64.tar.gz"
-    sha256 "432ce560f5a59d8515dfa9a4e0f74ae02682ca6f439637333f246576f2d4fe1b"
+  on_macos do
+    if Hardware::CPU.intel?
+      url "https://github.com/craftypath/gotf/releases/download/v0.14.0/gotf_0.14.0_darwin_amd64.tar.gz"
+      sha256 "9b17370d1fb54845d8d69806b546c174149661428ad660e73d8d2c4e23b3670c"
+
+      def install
+        bin.install "gotf"
+      end
+    end
   end
 
-  def install
-    bin.install "gotf"
+  on_linux do
+    if Hardware::CPU.intel?
+      url "https://github.com/craftypath/gotf/releases/download/v0.14.0/gotf_0.14.0_linux_amd64.tar.gz"
+      sha256 "881003710ae5ffbd9d872b13e5fec4522e58e9d6786c92c5097d47596a4cc45f"
+
+      def install
+        bin.install "gotf"
+      end
+    end
   end
 
   test do
