@@ -5,20 +5,20 @@
 class Gotf < Formula
   desc "Handling multiple environments with Terraform made easy"
   homepage "https://github.com/craftypath/gotf/"
-  version "0.15.0"
+  version "0.16.0"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/craftypath/gotf/releases/download/v0.15.0/gotf_0.15.0_darwin_amd64.tar.gz"
-      sha256 "798290c456e7c3e54bcf693555d5acdd94873a83945b068412d91aae7f682769"
+    if Hardware::CPU.arm?
+      url "https://github.com/craftypath/gotf/releases/download/v0.16.0/gotf_0.16.0_darwin_arm64.tar.gz"
+      sha256 "a652bdc8cae1707ad87164fac43e6af7a1906d619cfa57756645d85bfa87139d"
 
       def install
         bin.install "gotf"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/craftypath/gotf/releases/download/v0.15.0/gotf_0.15.0_darwin_arm64.tar.gz"
-      sha256 "14b7177a2ce54053ddf61652e8696121822691f9bfb51b163fd1651c3ec16b58"
+    if Hardware::CPU.intel?
+      url "https://github.com/craftypath/gotf/releases/download/v0.16.0/gotf_0.16.0_darwin_amd64.tar.gz"
+      sha256 "6fdd91e397adf251ca38e0ac34dff11bbd78ab3ead87be28835ef1bfb901aaba"
 
       def install
         bin.install "gotf"
@@ -27,17 +27,17 @@ class Gotf < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/craftypath/gotf/releases/download/v0.15.0/gotf_0.15.0_linux_amd64.tar.gz"
-      sha256 "0f7ddf02d854e0e740cc1bb1fabe9c73dca361690eb03c829984ff1fa3c07dd0"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/craftypath/gotf/releases/download/v0.16.0/gotf_0.16.0_linux_arm64.tar.gz"
+      sha256 "e2f1dd099e78fb580c6b1b7aa0101a3f5c6a6f66f22b10741c1eec4d809c9c9e"
 
       def install
         bin.install "gotf"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/craftypath/gotf/releases/download/v0.15.0/gotf_0.15.0_linux_arm64.tar.gz"
-      sha256 "ff7a9d48b8c7ee9cc6fe1a28d1dffbdd6e30780410fcd97d1e3f6998fb4bd17b"
+    if Hardware::CPU.intel?
+      url "https://github.com/craftypath/gotf/releases/download/v0.16.0/gotf_0.16.0_linux_amd64.tar.gz"
+      sha256 "6b98d6d35ed771a4ccb5b7c5cea029203f3d329461d55c31961287d5db72f487"
 
       def install
         bin.install "gotf"
