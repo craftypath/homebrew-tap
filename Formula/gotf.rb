@@ -5,20 +5,20 @@
 class Gotf < Formula
   desc "Handling multiple environments with Terraform made easy"
   homepage "https://github.com/craftypath/gotf/"
-  version "0.16.0"
+  version "0.17.0"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/craftypath/gotf/releases/download/v0.16.0/gotf_0.16.0_darwin_arm64.tar.gz"
-      sha256 "a652bdc8cae1707ad87164fac43e6af7a1906d619cfa57756645d85bfa87139d"
+      url "https://github.com/craftypath/gotf/releases/download/v0.17.0/gotf_0.17.0_darwin_arm64.tar.gz"
+      sha256 "626e10b42bc732bcdfce543d44dbf82e12d8691884793f3478b1a2f34c8c597f"
 
       def install
         bin.install "gotf"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/craftypath/gotf/releases/download/v0.16.0/gotf_0.16.0_darwin_amd64.tar.gz"
-      sha256 "6fdd91e397adf251ca38e0ac34dff11bbd78ab3ead87be28835ef1bfb901aaba"
+      url "https://github.com/craftypath/gotf/releases/download/v0.17.0/gotf_0.17.0_darwin_amd64.tar.gz"
+      sha256 "7684df6eead673be23aa8e833c75e8cb35b30eee3538dfa06f2e15aa784dd83a"
 
       def install
         bin.install "gotf"
@@ -28,16 +28,16 @@ class Gotf < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/craftypath/gotf/releases/download/v0.16.0/gotf_0.16.0_linux_arm64.tar.gz"
-      sha256 "e2f1dd099e78fb580c6b1b7aa0101a3f5c6a6f66f22b10741c1eec4d809c9c9e"
+      url "https://github.com/craftypath/gotf/releases/download/v0.17.0/gotf_0.17.0_linux_arm64.tar.gz"
+      sha256 "c45f8f7f5e2985fc90fcf6c68f26cb4eeb0a94d38886a6e8961c430331d81913"
 
       def install
         bin.install "gotf"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/craftypath/gotf/releases/download/v0.16.0/gotf_0.16.0_linux_amd64.tar.gz"
-      sha256 "6b98d6d35ed771a4ccb5b7c5cea029203f3d329461d55c31961287d5db72f487"
+      url "https://github.com/craftypath/gotf/releases/download/v0.17.0/gotf_0.17.0_linux_amd64.tar.gz"
+      sha256 "5120a79348e5ef7c95ef8f47557c1413ee52e0199faccdc9a75e0d4a22865e00"
 
       def install
         bin.install "gotf"
