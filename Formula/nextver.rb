@@ -5,34 +5,46 @@
 class Nextver < Formula
   desc "Automatic semver versioning"
   homepage "https://github.com/craftypath/nextver/"
-  version "0.4.0"
+  version "0.5.0"
 
   on_macos do
-    url "https://github.com/craftypath/nextver/releases/download/v0.4.0/nextver_0.4.0_darwin_amd64.tar.gz"
-    sha256 "3a64e384508a35ddbe95065063697aa98e88bac0b9ca88dc28c69fb7e49a84a1"
+    if Hardware::CPU.intel?
+      url "https://github.com/craftypath/nextver/releases/download/0.5.0/nextver_0.5.0_darwin_amd64.tar.gz"
+      sha256 "6bf0e92222f3459d7fecc7e3eb3ea8c6b7abe2c6e8e0919af935333c56ed7d0b"
 
-    def install
-      bin.install "nextver"
+      def install
+        bin.install "nextver"
+      end
     end
-
     if Hardware::CPU.arm?
-      def caveats
-        <<~EOS
-          The darwin_arm64 architecture is not supported for the Nextver
-          formula at this time. The darwin_amd64 binary may work in compatibility
-          mode, but it might not be fully supported.
-        EOS
+      url "https://github.com/craftypath/nextver/releases/download/0.5.0/nextver_0.5.0_darwin_arm64.tar.gz"
+      sha256 "e37408ab09ab29cd517917e7b8ac0b12303fac5d5e6d2bb69c5415b69c52c71e"
+
+      def install
+        bin.install "nextver"
       end
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/craftypath/nextver/releases/download/v0.4.0/nextver_0.4.0_linux_amd64.tar.gz"
-      sha256 "e70b729ce7d2bf7ff1cf3eb65035d9ff79abb54ac9576da549bb1117570a7d98"
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/craftypath/nextver/releases/download/0.5.0/nextver_0.5.0_linux_amd64.tar.gz"
+        sha256 "ca93633073f5e684ac2bf531e2ef456862c932ebfaa4d9a6d1de42c6f689bf32"
 
-      def install
-        bin.install "nextver"
+        def install
+          bin.install "nextver"
+        end
+      end
+    end
+    if Hardware::CPU.arm?
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/craftypath/nextver/releases/download/0.5.0/nextver_0.5.0_linux_arm64.tar.gz"
+        sha256 "15f4fde8c23068561dfd28a3e9ab7918a625fef40406386c4aad672dcd9c18c0"
+
+        def install
+          bin.install "nextver"
+        end
       end
     end
   end
